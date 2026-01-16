@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asthriona ltd. | Server Monitoring backend.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Full-page background with the car image */
+        .background {
+            background: url('https://cdn.asthriona.com/static/celestial-sphere/CS-SPA24-PITLANE.png') no-repeat center center fixed;
+            background-size: cover;
+            background-position: center top;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Semi-transparent dark overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Centered content */
+        .content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Team logo */
+        .logo {
+            max-width: 400px;
+            margin-bottom: 0px;
+            animation: fadeIn 2s ease-in-out;
+            /* white outline */
+            filter: drop-shadow(0 0 5px white);
+        }
+
+        /* Short fun message */
+        .message {
+            font-size: 1.5em;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .message {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div>
+            <img class="logo" src="https://cdn.asthriona.com/logo.png" alt="Asthriona Logo" />
+            <p class="message">Nothing to be seen here, Walk along.</p>
+        </div>
+    </div>
+</body>
+
+</html>
