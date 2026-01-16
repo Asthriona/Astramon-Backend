@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const serverSchema = new mongoose.Schema({
     hostname: { type: String, required: true, unique: true },
+    ip: { type: String },  // Add IP field
     cpu: Number,
     ram: Number,
     status: { type: String, enum: ['online', 'degraded', 'down'], default: 'online' },

@@ -13,10 +13,11 @@ class HealthCheckService {
         const timeSinceMetrics = now - server.lastMetrics;
         
         // Try to ping the server
-        const pingResult = await ping.promise.probe(server.hostname, {
+        const pingResult = await ping.promise.probe(server.ip, {
             timeout: 5,
             extra: ['-c', '1']
         });
+        console.log(`Ping ${server.ip}: alive=${pingResult.alive}, time=${pingResult.time}ms`);
 
         let newStatus = 'online';
         

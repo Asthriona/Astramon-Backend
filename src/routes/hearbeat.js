@@ -5,17 +5,17 @@ const Incident = require('../models/Incident');
 
 // Client sends metrics
 router.post('/heartbeat', async (req, res) => {
-    const { hostname, cpu, ram, timestamp } = req.body;
+    const { hostname, ip, cpu, ram, timestamp } = req.body;
     
     try {
         const server = await Server.findOneAndUpdate(
             { hostname },
             {
                 hostname,
+                ip,
                 cpu,
                 ram,
                 lastMetrics: new Date(timestamp * 1000),
-                // Don't update status here - let health check handle it
             },
             { upsert: true, new: true }
         );
